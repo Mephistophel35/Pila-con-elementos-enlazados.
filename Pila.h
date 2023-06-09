@@ -1,3 +1,5 @@
+//Creado por Mephistopheles
+
 #ifndef PILA_H_INCLUDED
 #define PILA_H_INCLUDED
 
