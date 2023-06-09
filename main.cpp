@@ -1,5 +1,3 @@
-// Creado por: David Durazo (ADDB)
-
 #include <iostream>
 #include "Pila.h"
 
