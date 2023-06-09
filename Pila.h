@@ -1,5 +1,3 @@
-// ADDB
-
 #ifndef PILA_H_INCLUDED
 #define PILA_H_INCLUDED
 
@@ -10,7 +8,7 @@ public:
 
     /** \class Clase Pila vacia
      *
-     * \exception Lanza excepciÛn cuando la pila est· llena (cuando se intente agregar un elemento).
+     * \exception Lanza excepci√≥n cuando la pila est√° llena (cuando se intente agregar un elemento).
      *
      */
     class PilaVacia : public std::exception{
@@ -56,40 +54,40 @@ public:
      */
     void Eliminar();
 
-    /** \brief Metodo obtener elemento en el tope de la pila (mÈtodo constante) ya que no modifica nada.
+    /** \brief Metodo obtener elemento en el tope de la pila (m√©todo constante) ya que no modifica nada.
      *
      * \return Dato tipo T constante por referencia.
      *
      */
     const T & Tope() const;
 
-    /** \brief MÈtodo que determina si la pila est· vacia (mÈtodo constante).
+    /** \brief M√©todo que determina si la pila est√° vacia (m√©todo constante).
      *
-     * \return True/False si la pila est· vacÌa (evalua si el tope es igual a -1)
+     * \return True/False si la pila est√° vac√≠a (evalua si el tope es igual a -1)
      *
      */
     bool pilaVacia() const;
 
-    /** \brief MÈtodo que vacÌa la pila (Elimina los datos que tenga)
+    /** \brief M√©todo que vac√≠a la pila (Elimina los datos que tenga)
      *
      */
     void Vaciar();
 
-    /** \brief MÈtodo que nos dice el tamaÒo de la pila, es decir, cuantos elementos tiene la pila (mÈtodo constante).
+    /** \brief M√©todo que nos dice el tama√±o de la pila, es decir, cuantos elementos tiene la pila (m√©todo constante).
      *
      * \return Cantidad de datos (entero).
      *
      */
     int Tamanio() const;
 
-    /** \brief MÈtodo que nos dice la capacidad de datos que el arreglo tiene (mÈtodo constante).
+    /** \brief M√©todo que nos dice la capacidad de datos que el arreglo tiene (m√©todo constante).
      *
      * \return Capacidad del arreglo (entero).
      *
      */
     int Capacidad() const;
 
-    /** \brief MÈtodo que imprime la pila (mÈtodo constante).
+    /** \brief M√©todo que imprime la pila (m√©todo constante).
      *
      */
     void Imprimir() const;
@@ -97,17 +95,17 @@ public:
 private:
 
     int capacidad;                  /**< Entero que nos dice la capacidad del arreglo de datos (la pila) */
-    int tope;                       /**< Entero usado como Ìndice que determina el tope de la pila */
-    T * Elementos;                  /**< Puntero al arreglo din·mico que contendr· los elementos en la pila */
+    int tope;                       /**< Entero usado como √≠ndice que determina el tope de la pila */
+    T * Elementos;                  /**< Puntero al arreglo din√°mico que contendr√° los elementos en la pila */
 
-    /** \brief MÈtodo para que amplÌa un x2 la capacidad del arreglo (la pila)
+    /** \brief M√©todo para que ampl√≠a un x2 la capacidad del arreglo (la pila)
      *
      */
     void Redimensionar();
 
-    /** \brief MÈtodo que determina si la pila est· llena (mÈtodo constante).
+    /** \brief M√©todo que determina si la pila est√° llena (m√©todo constante).
      *
-     * \return True/False si la pila est· llena.
+     * \return True/False si la pila est√° llena.
      *
      */
     bool pilaLlena() const;
