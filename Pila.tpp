@@ -1,8 +1,6 @@
-//ADDB
-
 #include <iostream>
 
-//**** MÈtodos que nos garantiza el buen funcionamiento de la clase ****//
+//**** M√©todos que nos garantiza el buen funcionamiento de la clase ****//
 
 template <typename T>
 Pila<T>::Pila()
@@ -36,7 +34,7 @@ Pila<T> & Pila<T>::operator=(const Pila<T> &p)
     //Creamos otro arreglo
     Elementos = new T[capacidad];
 
-    //Agregamos todos los elementos de la pila recibida como par·metro y se lo agregamos al nuevo arreglo.
+    //Agregamos todos los elementos de la pila recibida como par√°metro y se lo agregamos al nuevo arreglo.
     for(int i = 0; i <= tope; ++i){
         Elementos[i] = p.Elementos[i];
     }
@@ -51,21 +49,21 @@ Pila<T>::~Pila()
     delete[] Elementos;
 }
 
-//********************// MÈtodos P˙blicos //********************//
+//********************// M√©todos P√∫blicos //********************//
 
 template <typename T>
 void Pila<T>::Agregar(T d)
 {
-    //Si la pila no est· llena que solo agregue
+    //Si la pila no est√° llena que solo agregue
     //*** IMPORTANTE ***//
     //Se debe primero incrementar el valor del tope para poder agregarlo en ese lugar (recuerda que es un arreglo).
     if(!pilaLlena()){
         // Incrementamos el tope.
         ++tope;
-        // Ahora agregamos el valor recibido como par·metro (d) en la posiciÛn tope del arreglo (o sea, hasta arriba en la pila).
+        // Ahora agregamos el valor recibido como par√°metro (d) en la posici√≥n tope del arreglo (o sea, hasta arriba en la pila).
         Elementos[tope] = d;
     }else{
-        //Si la pila est· llena mandamos a Redimensionar el arreglo para despuÈs mandar a llamar por recursiÛn el agregar pas·ndole el mismo dato.
+        //Si la pila est√° llena mandamos a Redimensionar el arreglo para despu√©s mandar a llamar por recursi√≥n el agregar pas√°ndole el mismo dato.
         Redimensionar();
         Agregar(d);
     }
@@ -75,7 +73,7 @@ void Pila<T>::Agregar(T d)
 template <typename T>
 void Pila<T>::Eliminar()
 {
-    //Si la pila est· vacÌa tiramos una excepciÛn (esto se puede hacer menos hardcore, solamente regresando un mensaje en pantalla y retornando
+    //Si la pila est√° vac√≠a tiramos una excepci√≥n (esto se puede hacer menos hardcore, solamente regresando un mensaje en pantalla y retornando
     //claro, sin decrementar el tope).
     if(pilaVacia()) throw PilaVacia();
     --tope;
@@ -84,16 +82,16 @@ void Pila<T>::Eliminar()
 template <typename T>
 const T & Pila<T>::Tope() const
 {
-    //Si la pila est· vacÌa tiramos una excepciÛn(NO NECESARIAMENTE PUEDE SER EXCEPCI”N).
+    //Si la pila est√° vac√≠a tiramos una excepci√≥n(NO NECESARIAMENTE PUEDE SER EXCEPCI√ìN).
     if(pilaVacia()) throw PilaVacia();
-    //Retornamos el valor que est· en el tope de la pila.
+    //Retornamos el valor que est√° en el tope de la pila.
     return Elementos[tope];
 }
 
 template <typename T>
 bool Pila<T>::pilaVacia() const
 {
-    //Evaluamos si el tope es igual a -1, si el tope es igual a -1, entonces la pila est· vacÌa.
+    //Evaluamos si el tope es igual a -1, si el tope es igual a -1, entonces la pila est√° vac√≠a.
     return tope == -1;
 }
 
@@ -107,8 +105,8 @@ void Pila<T>::Vaciar()
 template <typename T>
 int Pila<T>::Tamanio() const
 {
-    //Regresamos la cantidad de datos que el arreglo tiene en ese momento al ser llamada esta funciÛn
-    //Se manda tope + 1, ya que el tope est· inicializado en -1.
+    //Regresamos la cantidad de datos que el arreglo tiene en ese momento al ser llamada esta funci√≥n
+    //Se manda tope + 1, ya que el tope est√° inicializado en -1.
     return tope + 1;
 }
 
@@ -122,19 +120,19 @@ int Pila<T>::Capacidad() const
 template <typename T>
 void Pila<T>::Imprimir() const
 {
-    //Si la pila est· vacia tiramos excepciÛn (NO NECESARIAMENTE NECESITA SER EXCEPTION.)
+    //Si la pila est√° vacia tiramos excepci√≥n (NO NECESARIAMENTE NECESITA SER EXCEPTION.)
     if(pilaVacia()) throw PilaVacia();
 
-    //Imprimo el valor que estÈ en el tope
+    //Imprimo el valor que est√© en el tope
     std:: cout << "[" << Elementos[tope] << "]  <--- Tope" << std::endl;
 
-    //Imprimo los dem·s valores EXCEPTO el primero ya que ya lo imprimÌ antes (por eso tope - 1).
+    //Imprimo los dem√°s valores EXCEPTO el primero ya que ya lo imprim√≠ antes (por eso tope - 1).
     for(int i = tope-1; i >= 0; --i){
         std:: cout << "[" << Elementos[i] << "]" << std::endl;
     }
 }
 
-//********************// MÈtodos Privados //********************//
+//********************// M√©todos Privados //********************//
 
 template <typename T>
 void Pila<T>::Redimensionar()
@@ -143,8 +141,8 @@ void Pila<T>::Redimensionar()
     T * temp = Elementos;
     //Duplicamos la capacidad del arreglo.
     capacidad *= 2;
-    //Creamos un nuevo arreglo de tamaÒo "capacidad" (Recordar que ya duplicamos la capacidad,
-    //entonces, si la capacidad era de 8 datos, ahora ser· de 16).
+    //Creamos un nuevo arreglo de tama√±o "capacidad" (Recordar que ya duplicamos la capacidad,
+    //entonces, si la capacidad era de 8 datos, ahora ser√° de 16).
     Elementos = new T[capacidad];
 
     //Agregamos los datos del arreglo temporal en el nuevo arreglo con capacidad duplicada.
@@ -159,7 +157,7 @@ void Pila<T>::Redimensionar()
 template <typename T>
 bool Pila<T>::pilaLlena() const
 {
-    // Evaluamos si el tamaÒo actual de arreglo es igual a la capacidad.
+    // Evaluamos si el tama√±o actual de arreglo es igual a la capacidad.
     return tope + 1 == capacidad;
 }
 
@@ -168,6 +166,6 @@ bool Pila<T>::pilaLlena() const
 template <typename T>
 const char * Pila<T>::PilaVacia::what() const throw()
 {
-    //AquÌ solamente se retorna el mensaje de excepciÛn.
+    //Aqu√≠ solamente se retorna el mensaje de excepci√≥n.
     return "La pila est\240 vacia";
 }
