@@ -1,3 +1,5 @@
+//Creado por Mephistopheles
+
 #include <iostream>
 
 //**** Métodos que nos garantiza el buen funcionamiento de la clase ****//
